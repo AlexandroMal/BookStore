@@ -15,10 +15,11 @@ namespace BookStore.DAL.EntityConfiguration
         {
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.Name).IsRequired().HasMaxLength(50);
-            builder.Property(x => x.Surname).IsRequired().HasMaxLength(100);
+            builder.Property(x => x.UserName).IsRequired().HasMaxLength(200);
+            builder.Property(x => x.FirstName).HasMaxLength(50);
+            builder.Property(x => x.Surname).HasMaxLength(100);
             builder.Property(x => x.Password).IsRequired().HasMaxLength(255);
-            builder.Property(x => x.PhoneNumber).IsRequired().HasMaxLength(20);
+            builder.Property(x => x.PhoneNumber).HasMaxLength(20);
 
         }
     }
