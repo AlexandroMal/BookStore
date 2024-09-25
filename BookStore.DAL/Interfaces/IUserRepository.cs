@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace BookStore.DAL.Interfaces
 {
-    public interface IUserRepository
+    public interface IUserRepository : IBaseRepository<User>
     {
-        Task<User> GetUserByCredentialsAsync(string name, string password);
+        Task<User> GetUserByCredentialsAsync(string username, string password);
+        Task<User> GetUserByUsernameAsync(string username);
     }
 }
